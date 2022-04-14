@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textview_san"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="15dp"
+        android:background="#03A9F4"
+        android:textColor="#FFFFFF"
+        android:text="0" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_del"
+            style="@style/kalk3"
+            android:text="DEL"/>
+
+        <Button
+            android:id="@+id/btn_equal"
+            style="@style/kalk3"
+            android:text="="/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn1"
+            style="@style/kalk1"
+            android:text="1"/>
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/kalk1"
+            android:text="2"/>
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/kalk1"
+            android:text="3"/>
+
+        <Button
+            android:id="@+id/btn_divide"
+            style="@style/kalk2"
+            android:text="/"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn4"
+            style="@style/kalk1"
+            android:text="4"/>
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/kalk1"
+            android:text="5"/>
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/kalk1"
+            android:text="6"/>
+
+        <Button
+            android:id="@+id/btn_minus"
+            style="@style/kalk2"
+            android:text="-"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn7"
+            style="@style/kalk1"
+            android:text="7"/>
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/kalk1"
+            android:text="8"/>
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/kalk1"
+            android:text="9"/>
+
+        <Button
+            android:id="@+id/btnx"
+            style="@style/kalk2"
+            android:text="x"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_point"
+            style="@style/kalk1"
+            android:text="."/>
+
+        <Button
+            android:id="@+id/btn0"
+            style="@style/kalk1"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/btn_plusminus"
+            style="@style/kalk2"
+            android:text="+/-"/>
+
+        <Button
+            android:id="@+id/btn_plus"
+            style="@style/kalk2"
+            android:text="+"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
