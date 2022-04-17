@@ -5,6 +5,18 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textview_zapis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="15dp"
+        android:background="#03A9F4"
+        android:textColor="#FFFFFF"
+        android:text="0" />
+
+    <TextView
         android:id="@+id/textview_san"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +33,11 @@
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_c"
+            style="@style/kalk3"
+            android:text="C"/>
 
         <Button
             android:id="@+id/btn_del"
@@ -111,7 +128,7 @@
             android:text="9"/>
 
         <Button
-            android:id="@+id/btnx"
+            android:id="@+id/btn_multiply"
             style="@style/kalk2"
             android:text="x"/>
 

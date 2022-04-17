@@ -10,8 +10,12 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button btn7, btn8, btn9, btn6, btn5, btn4, btn3, btn2, btn1, btn0;
-    Button btn_delete, btn_plusminus;
-    TextView textview_san;
+    Button btn_clear, btn_plusminus, btn_del;
+    Button btn_plus, btn_equal, btn_minus, btn_divide, btn_multiply;
+    TextView textview_san, textview_zapis;
+
+    String birinshiSan, ekinwiSan, znak, zapisText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +32,18 @@ public class MainActivity extends AppCompatActivity {
         btn0 = findViewById(R.id.btn0);
 
 
-        btn_delete = findViewById(R.id.btn_del);
+        btn_clear = findViewById(R.id.btn_c);
         btn_plusminus = findViewById(R.id.btn_plusminus);
+        btn_del = findViewById(R.id.btn_del);
 
+        btn_plus = findViewById(R.id.btn_plus);
+        btn_equal = findViewById(R.id.btn_equal);
+        btn_minus = findViewById(R.id.btn_minus);
+        btn_divide = findViewById(R.id.btn_divide);
+        btn_multiply = findViewById(R.id.btn_multiply);
 
         textview_san = findViewById(R.id.textview_san);
+        textview_zapis = findViewById(R.id.textview_zapis);
 
         View.OnClickListener btnSandar = new View.OnClickListener() {
             @Override
@@ -109,13 +120,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 switch (view.getId()){
-                    case R.id.btn_del:
+                    case R.id.btn_c:
 
                         textview_san.setText("0");
                         break;
+
+                    case R.id.btn_del:
+                        String sanText = textview_san.getText().toString();
+                        int san1 = Integer.parseInt(sanText);
+                        System.out.println(san1);
+                        int san2 = san1/10;
+                        textview_san.setText(""+san2);
+                        break;
+
                     case R.id.btn_plusminus:
 
-                        String sanText = textview_san.getText().toString();
+                        sanText = textview_san.getText().toString();
                         int san = Integer.parseInt(sanText);
 
                         if(san > 0) textview_san.setText("-"+sanText);
@@ -129,8 +149,122 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        btn_delete.setOnClickListener(btn_deleter);
+        btn_clear.setOnClickListener(btn_deleter);
         btn_plusminus.setOnClickListener(btn_deleter);
+        btn_del.setOnClickListener(btn_deleter);
+
+
+        btn_plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                birinshiSan = textview_san.getText().toString();
+
+                znak = "+";
+                zapisText = birinshiSan + znak;
+                textview_zapis.setText(zapisText);
+                textview_san.setText("0");
+
+            }
+        });
+
+        btn_minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                birinshiSan = textview_san.getText().toString();
+
+                znak = "-";
+                zapisText = birinshiSan + znak;
+                textview_zapis.setText(zapisText);
+                textview_san.setText("0");
+
+            }
+        });
+
+        btn_divide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                birinshiSan = textview_san.getText().toString();
+
+                znak = "/";
+                zapisText = birinshiSan + znak;
+                textview_zapis.setText(zapisText);
+                textview_san.setText("0");
+
+            }
+        });
+
+        btn_multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                birinshiSan = textview_san.getText().toString();
+
+                znak = "*";
+                zapisText = birinshiSan + znak;
+                textview_zapis.setText(zapisText);
+                textview_san.setText("0");
+
+            }
+        });
+
+        btn_equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ekinwiSan = textview_san.getText().toString();//11+15=26
+                if(znak.equals("+")){
+                    int san1 = Integer.parseInt(birinshiSan);
+                    int san2 = Integer.parseInt(ekinwiSan);
+
+                    int res = san1 + san2;
+
+
+                    zapisText = birinshiSan + znak + ekinwiSan + " = " + res;
+
+                    textview_zapis.setText(zapisText);
+                    textview_zapis.setText(""+res);
+                }
+                else if(znak.equals("-")){
+                    int san1 = Integer.parseInt(birinshiSan);
+                    int san2 = Integer.parseInt(ekinwiSan);
+
+                    int res = san1 - san2;
+
+
+                    zapisText = birinshiSan + znak + ekinwiSan + " = " + res;
+
+                    textview_zapis.setText(zapisText);
+                    textview_zapis.setText(""+res);
+                }
+                else if(znak.equals("*")){
+                    int san1 = Integer.parseInt(birinshiSan);
+                    int san2 = Integer.parseInt(ekinwiSan);
+
+                    int res = san1 * san2;
+
+
+                    zapisText = birinshiSan + znak + ekinwiSan + " = " + res;
+
+                    textview_zapis.setText(zapisText);
+                    textview_zapis.setText(""+res);
+                }
+                else if(znak.equals("/")){
+                    int san1 = Integer.parseInt(birinshiSan);
+                    int san2 = Integer.parseInt(ekinwiSan);
+
+                    int res = san1 / san2;
+
+
+                    zapisText = birinshiSan + znak + ekinwiSan + " = " + res;
+
+                    textview_zapis.setText(zapisText);
+                    textview_zapis.setText(""+res);
+                }
+            }
+        });
 
     }
 }
